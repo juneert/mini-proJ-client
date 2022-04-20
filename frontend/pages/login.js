@@ -8,24 +8,29 @@ import config from '../config/config'
 
 export default function Login({ token }) {
 
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [status, setStatus] = useState('')
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [status, setStatus] = useState('');
+    const [remember, setRemember] = useState(false);
 
     const login = async (req, res) => {
         try {
             let result = await axios.post(`${config.URL}/login`,
-                { username, password },
-                { withCredentials: true })
+                { username, password ,remember},
+                { withCredentials: true }
+            );
             console.log('result: ', result)
             console.log('result.data:  ', result.data)
             console.log('token:  ', token)
-            setStatus(result.status + ': ' + result.data.user.username)
+            setStatus(result.status + ': ' + result.data.user.username);
         }
         catch (e) {
             console.log('error: ', JSON.stringify(e.response))
-            setStatus(JSON.stringify(e.response).substring(0, 80) + "...")
+            setStatus(JSON.stringify(e.response).substring(0, 80) + "...");
         }
+    };
+    const reMem = async () => {
+        setRemember(!remember);
     }
 
     const loginForm = () => (
@@ -49,32 +54,39 @@ export default function Login({ token }) {
                     placeholder="password"
                     onChange={(e) => setPassword(e.target.value)} />
             </div>
+            <div>
+                <input id='remember_me'name='remember_me' type="checkbox" onClick={reMem}/>
+                <label>Remember Me</label>
+            </div>
         </div>
-    )
+    );
 
     const copyText = () => {
-        navigator.clipboard.writeText(token)
-    }
-
+        navigator.clipboard.writeText(token);
+    };
     return (
         <Layout>
             <Head>
                 <title>Login</title>
             </Head>
-            <div className={styles.container}>
+            <div>
                 <Navbar />
+                <div className={styles.container}>
                 <h1>Login</h1>
-                <div><b>Token:</b> {token.substring(0, 15)}...
+                {/* <div><b>Token:</b> {token.substring(0, 15)}...
                 <button onClick={copyText}> Copy token </button>
                 </div>
-                <br/>
+                <br/> */}
                 <div>
                     Status:  {status}
                 </div>
                 <br />
                 {loginForm()}
                 <div>
-                    <button onClick={login}>Login</button>
+                <div className={styles.button}>
+                  <button onClick={login}>Login</button></div>
+                    <a className="nav-link" href="/register">Register here</a>
+                </div>
                 </div>
             </div>
         </Layout>
