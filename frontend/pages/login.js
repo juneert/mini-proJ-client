@@ -34,31 +34,51 @@ export default function Login({ token }) {
     }
 
     const loginForm = () => (
-        <div className={styles.gridContainer}>
-            <div>
-                Username:
+        <div className="w-full max-w-xs">
+            <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ">
+            <div className= "mb-4 ">
+            <h1 className="text-center text-2xl font-bold text-gray-700   mb-4">Login </h1>
+                <div className="text-gray-700 text-base  mb-4"> Status :  {status}</div>
             </div>
-            <div>
-                <input type="text"
-                    name="username"
-                    placeholder="username"
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-            </div>
-            <div>
-                Password:
-            </div>
-            <div>
-                <input type="password"
-                    name="password"
-                    placeholder="password"
-                    onChange={(e) => setPassword(e.target.value)} />
-            </div>
-            <div>
-                <input id='remember_me'name='remember_me' type="checkbox" onClick={reMem}/>
-                <label>Remember Me</label>
-            </div>
-        </div>
+            
+        <div className="mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+             Username
+        </label>
+      <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text"
+            name="username" placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
+    </div>
+    <div className="mb-4">
+      <label className="block text-gray-700 text-sm font-bold mb-2" for="password">
+        Password
+      </label>
+      <input className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" input type="password"
+            name="password" placeholder="*******" onChange={(e) => setPassword(e.target.value)}/>
+    </div>
+    <div className="mb-4">
+      <label className="block text-gray-700 text-sm font-bold mb-2" for="password">
+        ConfirmPassword
+      </label>
+      <input className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" input type="password"
+            name="password" placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
+    </div>
+    <div className="md:flex md:items-center mb-6">
+    <div className="md:w-1/3"></div>
+    <label className="md:w-2/3 block text-gray-500 font-bold">
+      <input className="mr-2 leading-tight" id='remember_me'name='remember_me' type="checkbox" onClick={reMem}/>
+      <span className="text-sm">  Remember Me </span>
+    </label>
+  </div>
+    <div className="flex items-center justify-between">
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+        Login
+      </button>
+      <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/register">
+      Register here!!
+      </a>
+    </div>
+  </form>
+</div>
     );
 
     const copyText = () => {
@@ -72,21 +92,15 @@ export default function Login({ token }) {
             <div>
                 <Navbar />
                 <div className={styles.container}>
-                <h1>Login</h1>
-                {/* <div><b>Token:</b> {token.substring(0, 15)}...
-                <button onClick={copyText}> Copy token </button>
-                </div>
-                <br/> */}
-                <div>
-                    Status:  {status}
-                </div>
                 <br />
+                <br/>
+                <br/>
                 {loginForm()}
-                <div>
-                <div className={styles.button}>
-                  <button onClick={login}>Login</button></div>
-                    <a className="nav-link" href="/register">Register here</a>
+                <div className={styles.gif}>
+                    <img src="https://i.pinimg.com/originals/00/4b/17/004b173f6e3d6843df10114e087f30a8.gif "className="img-fluid z-depth-1"/><a href="/login"></a>
                 </div>
+                </div>
+                <div>
                 </div>
             </div>
         </Layout>

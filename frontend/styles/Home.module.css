@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: unset;
     align-items: center;
-    background-color : rgb(131, 131, 131);  
+    background-color : rgb(201, 201, 201);  
     margin: 2px 0px 0px;
     /* background-image: url("../public/image/g10.jpg"); */
 
@@ -56,11 +56,6 @@
     border: 2px solid black;
 
 }
-.headre{
-    /* background-image: url("../public/image/g12.jpg"); */
-    /* background-color: pink; */
-    margin: -20px 0px 0px;
-}
 .sta{
     text-align: center;
 }
@@ -107,13 +102,108 @@
 .button{
     text-align: center;
     margin: 0px 0px 10px;
+    padding: 10px;
+    background-color:red;
 }
 
 .welcome{
     margin: 32px;
     text-align: center;
-    font-size: 30px;
+    font-size: calc(30px + 2vmin);
 }
+.nav{
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    font-size: calc(16px);
+    line-height: 2.5;
+   
+}
+
+.nav ul {
+    list-style: none;
+    /*background-color: #444;*/
+    background-color: red;
+    text-align: right;
+    margin: 0;
+    padding: 0
+}
+
+.nav li{
+    font-size: 1.2em;
+    line-height: 40px;
+    text-align: left;
+}
+
+.nav Link{
+    text-decoration: none;
+    color: #FFF;
+    display: block;
+    padding-left: 15px;
+    border-bottom: 10px solid #888;
+    transition: .3s;
+}
+
+.nav Link:hover {
+    background-color: #005f5f;
+}
+
+.nav Link:active{
+    background-color: #aaa;
+    color: #444;
+    cursor: default;
+}
+
+.nav li li{
+    font-size: .8em;
+}
+
+/*style menu for larger screen*/
+
+@media screen and (min-width: 650px){
+    .nav li{
+        width: 195px;
+        border-bottom: none;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.4em;
+        display: inline-block;
+        /*margin-right: -4px;*/
+    }
+
+    .nav Link {
+        border-bottom: none;
+    }
+
+    .nav > ul > li {
+        text-align: center;
+    }
+
+    .nav > ul > li > Link {
+        padding-left: 0px;
+    }
+
+    /*Sub menu*/ 
+
+    .nav li ul {
+        position: absolute;
+        display: none;
+        width: inherit;
+    }
+
+    .nav li:hover ul {
+        display: block;
+    }
+    .nav li ul li {
+        display: block;
+    }
+
+}
+
+
 .body{
     margin: 0;
     padding: 0;
@@ -155,17 +245,4 @@
     box-sizing: border-box;
     font-size: 1.2rem;
 }
-
-
-.image{
-    width: 500px;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    box-shadow: 0px 0px 20px 5px rgb(207, 55, 8);
-    overflow: hidden;
-    border-radius: 10px solid rgb(224, 120, 46);
-}
-
 

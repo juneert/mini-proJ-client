@@ -38,38 +38,43 @@ export default function Register({ token }) {
     }
 
     const registerForm = () => (
-        <div className={styles.gridContainer}>
-            <div>
-                Username:
-            </div>
-            <div>
-                <input type="text"
-                    name="username"
-                    placeholder="username"
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-            </div>
-            <div>
-                Email:
-            </div>
-            <div>
-                <input type="email"
-                    name="email"
-                    placeholder="email"
-                    onChange={(e) => setEmail(e.target.value)} />
-            </div>
-            <div>
-                Password:
-            </div>
-            <div>
-                <input type="password"
-                    name="password"
-                    placeholder="password"
-                    onChange={(e) => setPassword(e.target.value)} />
-            </div>
-
+    <div className="w-full max-w-xs">
+        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ">
+        <div className= "mb-4 ">
+            <h1 className="text-center text-2xl font-bold text-gray-700 mb-4">Register </h1>
+                <div className="text-gray-700 text-base mb-4"> Status :  {status}</div>
         </div>
-    )
+        
+        <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                Username  </label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text"
+                name="username" placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
+        </div>
+
+        <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                E-mail  </label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="email"
+                name="email" placeholder="email" onChange={(e) => setEmail(e.target.value)}/>
+        </div>
+        <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="password">
+                Password </label>
+            <input className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" input type="password"
+                name="password" placeholder="*******" onChange={(e) => setPassword(e.target.value)}/>
+        </div>
+        
+        <div className="flex items-center justify-between">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                Register   </button>
+            <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/login">
+                Login here  </a>
+        </div>
+       
+        </form>
+    </div>
+    );
 
 
     return (
@@ -77,26 +82,19 @@ export default function Register({ token }) {
             <Head>
                 <title>Register</title>
             </Head>
-            <div className={styles.container}>
-                <Navbar />
-                <h1>Register</h1>
-                <div><b>Token:</b> {token.substring(0, 15)}...
-                <button
-                        onClick={() => { navigator.clipboard.writeText(token) }}>
-                        Copy token
-                </button>
+            <div>
+                 <Navbar />
+                 <div className={styles.container}>
+                     <br/>
+                     <br/>
+                     <br/>
+                     {registerForm()}
+                     <div className={styles.gif}>
+                    <img src="https://i.pinimg.com/originals/54/b3/01/54b301f91e3765d80b30c57a717ae1d7.gif "className="img-fluid z-depth-1"/><a href="/login"></a>
                 </div>
-                <br />
-            Status:  {status}
-                <br /><br />
-                <div className={styles.content}>
-                    {registerForm()}
-                </div>
-
-                <div>
-                    <button onClick={register}>Register</button>
                 </div>
             </div>
+            
         </Layout>
     )
 }

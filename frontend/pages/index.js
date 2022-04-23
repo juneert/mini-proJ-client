@@ -16,14 +16,15 @@ export default function Home({ token }) {
         <div className={styles.welcome}>
             <p> ยินดีต้อนรับเข้าสู่ร้าน "K-POP FOR GOT7"</p>
         </div>     
-        <div className = {styles.image}>
+        <div className =  "px-2 border border-gray-400  rounded shadow">
             <img src="https://s.isanook.com/jo/0/rp/r/w728/ya0xa0m1w0/aHR0cHM6Ly9zLmlzYW5vb2suY29tL2pvLzAvdWQvNDg4LzI0NDAyMjUvcGljc2FydF8wMS0xNi0wNC41Mi4yNi5qcGc=.jpg"/>
         </div> 
         <div className={styles.im}>
-           <a href="/login">ล็อคอินเพื่อเข้าสู่ระบบ</a>
+           <button className="bg-white hover:bg-gray-100 text-gray-800  py-2 px-4 border border-gray-400 rounded shadow">
+             <a href="/login">ล็อคอินเพื่อเข้าสู่ระบบ</a>
+             </button>
         </div>
         </div>
-       
     </div>
 </Layout>
   )
