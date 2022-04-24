@@ -1,0 +1,60 @@
+.title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.stlist {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 10px;
+    padding: 1px;
+    flex-wrap: wrap;
+    width: 80vw;
+}
+
+.stcontainer {  
+    background-color:wheat;
+    min-height: 90vh;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    /* background-color : rgb(201, 201, 201);   */
+    margin: -80px 0px 0px;
+    
+}
+/* .list {
+    display: flex;
+    margin: 10px;
+} */
+/* .text{
+    margin: 10px;
+    text-align: center;
+    font-size: 32;
+} */
+.listItem {
+    display: flex;                   
+    flex-direction: column;
+    justify-content: center;
+    width:auto;
+    align-items: center;
+    margin: 20px;
+    border: 2px solid #777;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: rgb(247, 243, 188); 
+}
+
+.listItem1{
+    align-items: left;
+}
+.listItem > div{
+    margin: 5px 0px;
+}
+
+/* .new{
+    margin-left: -1000px;
+} */

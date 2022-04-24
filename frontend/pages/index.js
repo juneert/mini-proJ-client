@@ -10,8 +10,7 @@ export default function Home({ token }) {
     <Head>
         <title>First Page</title>
     </Head>
-    <div>
-        <Navbar />
+
         <div className={styles.container}>
         <div className={styles.welcome}>
             <p> ยินดีต้อนรับเข้าสู่ร้าน "K-POP FOR GOT7"</p>
@@ -25,7 +24,6 @@ export default function Home({ token }) {
              </button>
         </div>
         </div>
-    </div>
 </Layout>
   )
 }

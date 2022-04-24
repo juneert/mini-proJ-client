@@ -1,0 +1,20 @@
+.container {
+    min-height: 100vh;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    background-color : rgb(236, 189, 189);  
+    margin: -80px 0px 0px;
+    /* background-image: url("../public/image/g10.jpg"); */
+
+}
+
+.gif{
+    position:absolute;
+    right: 10px;
+    margin-top: 200px;
+    width: 500px;
+    height: 150px;
+}

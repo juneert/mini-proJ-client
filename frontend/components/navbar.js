@@ -18,10 +18,12 @@ const Navbar = () => {
 
             <Link href="/admin"><a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Admin</a></Link>
             
-            <Link href="https://sites.google.com/site/got7bynadearmarkku/prawati-swn-taw"><a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile</a></Link>
+            <Link href="https://sites.google.com/site/got7bynadearmarkku/prawati-swn-taw"><a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile1</a></Link>
+            
             <Link href="https://www.youtube.com/c/GOT7stillalive"><a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Youtube</a></Link>
 
             <Link href="/contact"><a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a></Link>
+            {/* <Link href="/test"><a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Test</a></Link> */}
           </div>
         </div>
       </div>
