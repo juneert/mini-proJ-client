@@ -60,23 +60,24 @@
   width: 80vw;
 }
 .container {
-  margin: -18px;
+  margin: 2px;
   min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(174, 182, 252);
   /* background-image: url("../public/image/bg.png"); */
   /* border: 10px solid blue; */
 }
 .listItem {
-  background-color: white;
+  background-color: rgb(187, 182, 255);
     display: flex;
     flex-direction: column;
     margin: 20px;
     padding: 10px;
-    border: 2px solid green;
+    border: 2px solid rgb(18, 2, 88);
     font-size: 1.2rem;
     text-align: left;
     align-items:center;
@@ -97,10 +98,10 @@
   margin: 20px;
   height: 450px;
   padding: 20px;
-  border: 2px solid red;
+  border: 2px solid rgb(46, 20, 161);
   font-size: 1.1rem;
   text-align: center;
-  background-color:whitesmoke;
+  background-color:rgb(186, 192, 245);
 }
 
 .text{

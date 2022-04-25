@@ -45,7 +45,9 @@ const index = () => {
   };
   return (
 
-          <div className={styles.stcontainer}>
+         <div>
+           <Navbar/>
+           <div className={styles.stcontainer}>
           <br/>
         <div className="text-center text-6xl text text-black font-bold  mb-4 ">
              <h2>สินค้าภายในร้าน</h2>
@@ -56,6 +58,7 @@ const index = () => {
 
     </div>
 
+         </div>
     
   );
 };

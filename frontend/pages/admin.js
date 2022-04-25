@@ -114,15 +114,14 @@ const admin = ({ token }) => {
         return (
           <div className={styles.listItem} key={index}>
             <div className={styles.listItem1} key={index}>
-            <div><b>ชื่อ :</b> {item.name} <br /></div>
-            <div><b>รายละเอียด :</b> {item.description} <br /></div>
-            <div><b>ราคา :</b> {item.price} บาท<br /></div>
-            <div><b>มีอยู่จำนวน :</b> {item.quantity} ชิ้น</div>
-            {/* <div><b>Image :</b> {item.imageUrl}</div> */}
-            {/* <div><b>Image :</b> <img src={item.imageUrl }/></div> */}
+                <div><b>ชื่อ :</b> {item.name} <br /></div>
+                <div><b>รายละเอียด :</b> {item.description} <br /></div>
+                <div><b>ราคา :</b> {item.price} บาท<br /></div>
+                <div><b>มีอยู่จำนวน :</b> {item.quantity} ชิ้น</div>
             </div>
-            <div><img src={item.imageUrl } style={{ width: "150px", height: "150px" }} /></div>
-
+            <br/>
+            <div><img src={item.imageUrl } style={{ width: "200px", height: "200px" }} /></div>
+            <br/>
             <div className={styles.edit_button}>
               <button
                 className={styles.button_get}
@@ -152,73 +151,77 @@ const admin = ({ token }) => {
   };
   // console.log(imageUrl);
   return (
-   
-      <div className={styles.container}>
-      
-      
-      <div className={styles.text}>
-      {/* <Spring
-                loop
-                from={{ opacity: 0, color: 'red' }}
-                to={[
-                    { opacity: 1, color: '#ffaaee' },
-                    { opacity: 0, color: 'rgb(14,26,19)' },
-                ]}>
-                {styles => (
-                    <animated.div style={styles}>สินค้า</animated.div>
-                )}
-            </Spring> */}
+     <div>
+         <Navbar /> 
+         <div className={styles.container}>
+            <br/>
+            
+        <div className="w-1/2 max-w-lg">
+        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ">
+        
+        <div className= "mb-4 ">
+            <h1 className="text-center text-2xl  text-black mb-4">เพิ่มเติมสินค้าภายในร้าน</h1>       
+        </div>
 
-</div>
+        <div className="mb-4 ">
+            <label className="block text-black text-sm font-bold mb-2" >
+                NameProduct </label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  
+            type="text"
+            name="name"
+            onChange={(e) => setName(e.target.value)}
+          ></input>
+        </div>
 
-      <div className={styles.form_add}>
-        <h2>Add Products</h2>            
-{/* name  description price quantity  imageUrl  */}
-        Name (ชื่อ) :
-        <input
-          type="text"
-          name="name"
-          onChange={(e) => setName(e.target.value)}
-        ></input>
+        <div className="mb-4">
+            <label className="block text-black text-sm font-bold mb-2" >
+               Description </label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  
+             type="text"
+             name="description"
+             onChange={(e) => setDescription(e.target.value)}
+           ></input>
+        </div>
 
-        Description (รายละเอียด) :
-        <input
-          type="text"
-          name="description"
-          onChange={(e) => setDescription(e.target.value)}
-        ></input>
+        <div className="mb-4">
+            <label className="block text-black text-sm font-bold mb-2" >
+               Price </label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  
+            type="number"
+            name="price"
+            onChange={(e) => setPrice(e.target.value)}
+          ></input>
+        </div>
 
-        Price (ราคา) :
-        <input
-          type="number"
-          name="price"
-          onChange={(e) => setPrice(e.target.value)}
-        ></input>
+        <div className="mb-4">
+            <label className="block text-black text-sm font-bold mb-2" >
+               Quantity </label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  
+            type="number"
+            name="quantity"
+            onChange={(e) => setQuantity(e.target.value)}
+          ></input>
+        </div>
 
-        Quantity (มีอยู่จำนวน) :
-        <input
-          type="number"
-          name="quantity"
-          onChange={(e) => setQuantity(e.target.value)}
-        ></input>
-
-
+        <div className="mb-4">
         Image (รูปภาพ) :
         <label className='form-control'>
           <img className='image' src={imageUrl} />
           <input className='input-file' type='file' onChange={handleChangeImage} />
         </label>
-
-        <button
+        </div>
+        
+         <button
           className={styles.button_add}
           onClick={() => addShop(name, description, price, quantity, imageUrl)}
         >
           Add
         </button>
-      </div>
 
-      <div className={styles.addlist}>{showShops()}</div>
-      
+        </form>
+    </div>
+        <div className={styles.addlist}>{showShops()}</div>
+    </div>
     </div>
     
   );

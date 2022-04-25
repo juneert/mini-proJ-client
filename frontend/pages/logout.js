@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 import axios from 'axios'
 import config from '../config/config'
+import Navbar from '../components/navbar'
 
 export default function Logout({ token }) {
 
@@ -26,7 +27,9 @@ export default function Logout({ token }) {
                 <title>User profile</title>
             </Head>
             
-                <div className={styles.container}>
+                <div>
+                    <Navbar/>
+                    <div className={styles.container}>
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     <div className={styles.gif}>
                     <img src="https://www.icegif.com/wp-content/uploads/adios-icegif-5.gif"className="img-fluid z-depth-1"/><a href="/login"></a>
@@ -45,6 +48,7 @@ export default function Logout({ token }) {
                     
                 </div>
 
+                </div>
         </Layout>
     )
 }

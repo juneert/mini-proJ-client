@@ -66,7 +66,7 @@ export default function Register({ token }) {
         </div>
         
         <div className="flex items-center justify-between">
-            <button onClick={register} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+            <button onClick={register} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded focus:outline-none focus:shadow-outline text-center" type="button">
                 Register   </button>
             <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/login">
                 Login here  </a>
@@ -82,8 +82,10 @@ export default function Register({ token }) {
             <Head>
                 <title>Register</title>
             </Head>
-
-                 <div className={styles.container}>
+            <div>
+                <Navbar/>
+                
+                <div className={styles.container}>
                      <br/>
                      <br/>
                      <br/>
@@ -91,7 +93,8 @@ export default function Register({ token }) {
                      <div className={styles.gif}>
                     <img src="https://i.pinimg.com/originals/54/b3/01/54b301f91e3765d80b30c57a717ae1d7.gif "className="img-fluid z-depth-1"/><a href="/login"></a>
                 </div>
-                </div>            
+                </div>
+            </div>            
         </Layout>
     )
 }

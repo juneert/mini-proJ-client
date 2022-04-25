@@ -7,7 +7,9 @@ class Contact extends Component {
     state = {}
     render() {
         return(
-                <div className={styles.container}>
+                <div>
+                    <Navbar/>
+                    <div className={styles.container}>
                     <br/><br/><br/>
                     <div className={styles.gif}>
                     <img src="https://i.pinimg.com/originals/7b/13/7c/7b137c48419e95e12416e783cc804e45.gif "className="img-fluid z-depth-1"/><a href="/login"></a>
@@ -44,6 +46,7 @@ class Contact extends Component {
                         </form>
                         
                     </div>
+                </div>
                 </div>
 
 

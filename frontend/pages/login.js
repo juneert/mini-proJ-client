@@ -87,6 +87,8 @@ export default function Login({ token }) {
             <Head>
                 <title>Login</title>
             </Head>
+            <div>
+              <Navbar/>
                 <div className={styles.container}>
                 <br />
                 <br/>
@@ -96,8 +98,8 @@ export default function Login({ token }) {
                     <img src="https://i.pinimg.com/originals/00/4b/17/004b173f6e3d6843df10114e087f30a8.gif "className="img-fluid z-depth-1"/><a href="/login"></a>
                 </div>
                 </div>
-                <div>
-                </div>
+                
+              </div>
 
         </Layout>
     )
